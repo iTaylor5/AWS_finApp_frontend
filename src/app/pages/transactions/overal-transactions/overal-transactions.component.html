@@ -1,0 +1,90 @@
+<div class=" content">
+    <div class=" row">
+        <ol class=" breadcrumb bg-transparent ml-3">
+            <li class=" breadcrumb-item"><a href="#"> Home </a></li>
+            <li class=" breadcrumb-item"><a href="#"> Library </a></li>
+            <li class=" breadcrumb-item active">Data</li>
+        </ol>
+        <div class=" col-md-12">
+            <div class=" card">
+                <div class=" card-header">
+                    <div class=" tools float-right">
+                        <div class=" dropdown" dropdown>
+                            <button class=" btn btn-default dropdown-toggle btn-link btn-icon dropdown-toggle"
+                                data-toggle="dropdown" dropdownToggle type="button">
+                                <i class=" tim-icons icon-settings-gear-63"> </i>
+                            </button>
+                            <div class=" dropdown-menu dropdown-menu-right" *dropdownMenu>
+                                <a class=" dropdown-item" href="#"> Action </a>
+                                <a class=" dropdown-item" href="#"> Another action </a>
+                                <a class=" dropdown-item" href="#"> Something else here </a>
+                                <a class=" dropdown-item text-danger" href="#"> Remove Data </a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class=" card-title">Simple Table</h4>
+                </div>
+                <div class=" card-body">
+                    <div class=" table-responsive">
+                        <table class=" table">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th class=" text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th class=" text-center">Date</th>
+                                    <th>Discription</th>
+                                    <th>Account</th>
+                                    <th>Subcategory</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tt of page.content">
+                                <tr>
+                                    <td class=" text-center">
+                                        <div class=" photo">
+                                            <img alt="Table image" src="{{tt.member.img}}" />
+                                        </div>
+                                    </td>
+                                    <td>{{tt.member.name}}</td>
+                                    <td>{{tt.amount | currency}}</td>
+                                    <td class=" text-center">{{tt.dateCreated |date}}</td>
+                                    <td class=" text-left">{{tt.description}}</td>
+                                    <td class=" text-left">{{tt.account.name}}</td>
+                                    <td class=" text-left">{{tt.subcategory.name}}</td>
+                                    <td class=" text-right">
+                                        <button class=" btn btn-success btn-link btn-sm btn-icon" tooltip="edit"
+                                            type="button" (click)="openModal(tt)"> </button>
+                                        <i class=" tim-icons icon-settings"> </i>
+
+                                        <button class=" btn btn-danger btn-link btn-sm" tooltip="Delete" type="button"
+                                            (click)="showSwal(tt)">
+                                            <i class=" tim-icons icon-simple-remove"> </i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr class="my-no w-100">
+                        <app-custom-pagination [page]="page" (nextPageEvent)="getNextPage()"
+                            (previousPageEvent)="getPreviousPage()" (pageSizeEvent)="getPageInNewSize($event)">
+                        </app-custom-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class=" col-md-3 mr-auto">
+        <div class=" card">
+            <div class=" card-body text-center">
+                <p class=" card-text">
+                    A warning message, with a function attached to the "Confirm"
+                    Button...
+                </p>
+                <button class=" btn btn-danger btn-fill" (click)="showSwal('warning-message-and-confirmation')">
+                    Try me!
+                </button>
+            </div>
+        </div>
+    </div> -->
+</div>

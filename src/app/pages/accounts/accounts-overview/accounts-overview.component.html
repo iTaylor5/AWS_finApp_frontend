@@ -1,0 +1,132 @@
+<!-- <div class=" row">
+    <div class=" col-lg-4 col-md-6" *ngFor="let acc of accountsList | async">
+        <div class=" card card-pricing card-primary card-white" style="height: 40rem;">
+            <div class=" card-body">
+                <h1 class=" card-title text-capitalize pl-2" style="resize: both;">{{acc.name}}</h1>
+
+                <img alt="Image" class=" card-img" src="assets/img/card-primary.png" />
+                <div class=" card-prices">
+                </div>
+                <ul class=" list-group">
+                    <li class=" list-group-item">Name: {{acc.name}}</li>
+                    <li class=" list-group-item">Currency: {{acc.currency}}</li>
+                    <li class=" list-group-item">Member: {{acc.member}}</li>
+                </ul>
+                <div class=" card-prices">
+                    <div class="h6 text-on-front">BALANCE</div>
+                    <h3 class=" text-on-front">{{acc.balance | currency}}</h3>
+                    <h5 class=" text-on-back">$</h5>
+                </div>
+            </div>
+            <div class=" card-footer text-center mb-3 mt-3">
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class=" row">
+    <div class=" card">
+        <div class=" card-header">
+            <h5 class=" card-category">OVERVIEW</h5>
+            <h3 class=" card-title">Accounts</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div *ngFor="let acc of accountsList | async" class=" col-md-6">
+                    <div class="card ">
+                        <div class=" card-header">
+                            <h5 class=" card-category">ACCOUNT</h5>
+                            <h3 class=" card-title">{{acc.name}}</h3>
+                        </div>
+                        <div class=" card-body">
+                            <div class=" col-md-12 mb-4">
+                                <h4 class=" card-title">Account Currency:</h4>
+                                <p>{{acc.currency}}</p>
+                                <h4 class=" card-title">Balance:</h4>
+                                <p>{{acc.balance}}</p>
+                            </div>
+                        </div>
+                        <div class=" card-body">
+                            <div class=" col-md-12 mb-4">
+                                <h4 class=" card-title">Member Associated with Account:</h4>
+                                <p>Not implemented yet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+<!-- <div class=" row">
+    <div class=" card ">
+        <div class=" card-header">
+            <h5 class=" card-category">OVERVIEW</h5>
+            <h3 class=" card-title">Accounts</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div *ngFor="let acc of accountsList | async" class=" col-md-4">
+                    <div class="card ">
+                        <div class=" card-header">
+
+                            <div class="pull-left">
+                                <h4 class="text-muted">NAME</h4>
+                            </div>
+                            <div class="pull-right">
+                                <h4 class="text-muted">{{acc.name}}</h4>
+                            </div>
+                        </div>
+                        <div class=" card-body text-primary">
+                            <div class=" col-md-12 mb-3 blockquote blockquote-primary">
+                                <div class="pull-left">Account Currency:</div>
+                                <div class="pull-right">{{acc.currency}}</div>
+                                <br>
+                                <div class="pull-left">Account Balance:</div>
+                                <div class="pull-right">{{acc.balance}}</div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+<!-- 
+<div class=" card ">
+    <div class=" card-header">
+        <h5 class=" card-category">OVERVIEW</h5>
+        <h3 class=" card-title">Accounts</h3>
+    </div> -->
+<div class="row">
+
+    <div *ngFor="let acc of accountsList | async" class=" col-md-4">
+        <div class=" card bg-gradient-default">
+            <div class=" card-body">
+
+                <h3 class=" card-title text-white">{{acc.name}}</h3>
+                <blockquote class=" blockquote text-white mb-0">
+                    <div class="pull-left">Currency:</div>
+                    <div class="pull-right">{{acc.currency}}</div>
+                    <br>
+                    <div class="pull-left">Balance:</div>
+                    <div class="pull-right">{{acc.balance}}</div>
+                    <br>
+                    <br>
+
+                    <footer class=" blockquote-footer text-danger">
+                        Member <cite title="Source Title"> name </cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <!-- </div>
+</div> -->

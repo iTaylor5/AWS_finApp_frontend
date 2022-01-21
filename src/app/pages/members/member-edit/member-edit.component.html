@@ -1,0 +1,112 @@
+<div class=" col-md-9 mx-auto">
+    <div class=" card card-register ">
+        <div class=" card-header">
+            <img alt="Card image" class=" card-img" src="assets/img/card-primary.png" />
+            <h4 class=" card-title">SELECT</h4>
+        </div>
+        <div class=" card-body">
+            <form [formGroup]="memberSelectForm" class="form">
+                <label for="inputState">
+                    <h2>Choose the member</h2>
+                </label>
+                <select id="inputState" class="form-control form-control-lg" formControlName="memberName">
+                    <option>...</option>
+                    <option selected *ngFor="let member of membersList | async">{{member.name}}
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class=" card-footer">
+            <a class=" btn btn-primary btn-round btn-lg" href="javascript:void(0)">
+                Get Started
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="memberName != undefined" class="col-md-12 row">
+    <div class=" card">
+        <div class=" card-header">
+            <h5 class=" card-category">OVERVIEW</h5>
+            <h3 class=" card-title">Members</h3>
+        </div>
+        <div class=" row">
+
+            <div class=" col-md-7">
+                <div class=" card">
+                    <div class=" card-header">
+                        <h5 class=" card-category">EDIT</h5>
+                        <h3 class=" card-title">Change name</h3>
+                    </div>
+
+                    <div class=" card-body">
+                        <form [formGroup]="editMemberForm" (ngSubmit)="changeName()">
+                            <div class=" row">
+                                <div class=" col-md-5 pr-md-1">
+                                    <div class=" form-group">
+                                        <label> Name </label>
+
+                                        <input class=" form-control" type="text" formControlName="newName" />
+                                    </div>
+                                </div>
+                            </div>
+                            <button class=" btn btn-fill btn-danger" type="submit">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" col-md-5" *ngIf="selectedMember != undefined">
+                <div class=" card card-user">
+                    <div class=" card-body">
+                        <p class=" card-text"></p>
+                        <div class=" author">
+                            <div class=" block block-one"></div>
+                            <div class=" block block-two"></div>
+                            <div class=" block block-three"></div>
+                            <div class=" block block-four"></div>
+                            <a>
+                                <img alt="..." class=" avatar" src="{{selectedMember.img}}" />
+                                <h4 class=" title">{{selectedMember.name}}</h4>
+                            </a>
+                            <!-- NEED TO ADD -->
+                            <!-- <p class=" description">Ceo/Co-Founder</p> -->
+                        </div>
+                        <div class=" card-description">
+
+                            <div *ngFor="let acc of selectedMember.accounts">
+                                <blockquote class=" blockquote text-primary mb-0">
+                                    <h4 class="text-primary">Accounts:</h4>
+                                    <div class="pull-left">Name:</div>
+                                    <div class="pull-right">{{acc.name}}</div>
+                                    <br>
+
+                                    <div class="pull-left">Currency:</div>
+                                    <div class="pull-right">{{acc.currency}}</div>
+                                    <br>
+                                    <div class="pull-left">Balance:</div>
+                                    <div class="pull-right">{{acc.balance}}</div>
+                                    <br>
+                                    <br>
+
+                                    <footer class=" blockquote-footer text-white">
+                                        # of transactions <cite title="Source Title"> 1934 </cite>
+                                    </footer>
+                                </blockquote>
+                                <!-- <ul>
+                                    <li class="text-danger">{{acc.name}}</li>
+                                    <li class="list-unstyled">
+                                        <ul>
+                                            <li class="text-danger">Balance: {{acc.balance | currency}}</li>
+                                            <li class="text-danger">Currency: {{acc.currency}}</li>
+                                        </ul>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

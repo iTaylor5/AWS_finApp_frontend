@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Simple modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+
+    <!-- <form [formGroup]="transactionSelectForm" class="form">
+        <label for="inputState">
+            <h2>Choose the member</h2>
+        </label>
+        <select id="inputState" class="form-control form-control-lg" formControlName="memberName">
+            <option>...</option>
+            <option selected *ngFor="let member of membersList | async">{{member.name}}
+            </option>
+        </select>
+    </form> -->
+
+
+    <input [(ngModel)]="transaction.amount" type="text">
+    <input [(ngModel)]="transaction.description" type="text">
+    <button (click)="passBack()" type="submit" class="btn btn-primary w-100">Pass back</button>
+</div>

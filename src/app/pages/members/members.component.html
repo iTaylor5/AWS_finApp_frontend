@@ -1,0 +1,46 @@
+<div class=" content">
+
+    <div class=" row">
+        <div class="col-md-12">
+            <div class=" card card-primary">
+                <div class=" card-header">
+                    <h5 class=" card-category">OVERVIEW</h5>
+                    <h3 class=" card-title">Members</h3>
+                </div>
+                <div class="card-body">
+                    <!-- <img alt="Image" class=" card-img" src="assets/img/card-primary.png" /> -->
+                    <h5 class=" title">Edit Profile</h5>
+                    <div class="row">
+                        <div class=" col-md-6" *ngFor="let member of membersList | async">
+                            <div class=" card card-testimonial">
+                                <div class=" card-header card-header-avatar">
+                                    <a href="#pablo">
+                                        <img alt="Card image" class="img img-raised" src={{member.img}} />
+                                    </a>
+                                </div>
+                                <div class=" card-body">
+                                    <h4 class=" card-title">{{member.name}}</h4>
+                                    <p class=" card-description">
+                                        Number of accounts: {{member.accounts.length}}
+                                        <br>
+                                        Number of transactions: {{member.transactions.length}}
+                                        <br>
+                                    </p>
+                                </div>
+                                <div class=" card-footer">
+
+                                    <p class=" category">@{{member.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <app-member-edit [membersList]=membersList></app-member-edit> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <app-member-edit [membersList]=membersList></app-member-edit>
+
+</div>

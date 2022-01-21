@@ -1,0 +1,13 @@
+<div class="content">
+    <div class=" row">
+        <div class="col-md-12">
+            <app-accounts-overview [accountsList]=accountsList></app-accounts-overview>
+            <app-edit-accounts [accountSelected]=accountSelected [accountsList]=accountsList [membersList]=membersList
+                (addAcc)="addAccount($event)" (deleteAccount)="deleteAccount($event)"
+                (editedAccName)="submitEditedAccountName($event)"
+                (editedAccCurrency)="submitEditedAccountCurrency($event)" (accNameSelected)="getAccountSelected($event)"
+                (editedAccBalance)="submitEditedAccountBalance($event)">
+            </app-edit-accounts>
+        </div>
+    </div>
+</div>

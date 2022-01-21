@@ -1,0 +1,28 @@
+<div class="row">
+    <div *ngFor="let cat of categories | async; trackBy: customTB" class=" col-md-6">
+        <div class="card  card-primary">
+            <div class=" card-header">
+                <h5 class=" card-category">CATEGORY</h5>
+                <h3 class=" card-title">{{cat.name}}</h3>
+            </div>
+            <div class=" card-body">
+                <!-- <img alt="Image" class=" card-img " src="assets/img/card-primary.png" /> -->
+                <div class=" col-md-12 mb-4">
+                    <h4 class=" card-title">Subcategories</h4>
+                    <tag-input (onAdd)="onAdded($event, cat.name)" theme="regular-theme" [(ngModel)]='cat.subcategories'
+                        [displayBy]="'name'" value="'name'" placeholder="+Add" #input>
+                        <ng-template let-item="item" let-index="index">
+                            <!-- DEFINE HERE YOUR TEMPLATE *ngFor="let subCat of cat.subcategories" -->
+                            <span>{{item.name}}</span>
+                            <!-- <button class="tab-button" (click)="remover(item.name, index)">Delete</button> -->
+                            <delete-icon (click)="remover(item.name, index)"></delete-icon>
+                        </ng-template>
+
+                    </tag-input>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div>
+</div> -->

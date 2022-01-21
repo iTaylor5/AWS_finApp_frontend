@@ -1,0 +1,131 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-md-8">
+            <div class=" card pt-2">
+                <div class=" card-header">
+                    <h5 class=" title">New Transaction</h5>
+                </div>
+                <div class=" card-body">
+                    <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" class="form">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="firstName">Amount</label>
+                                    <input type="text" id="firstName" class="form-control form-control-lg"
+                                        formControlName="amount" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <label class="form-label" for="lastName">Discription</label>
+                                    <input type="text" id="lastName" class="form-control form-control-lg"
+                                        formControlName="description" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- [(ngModel)]="categoryNameSelected" -->
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="inputState">Category</label>
+                                <select id="inputState" class="form-control form-control-lg"
+                                    formControlName="categoryEnter">
+                                    <option selected>...</option>
+                                    <option *ngFor="let cat of categoryList">{{cat.name}}
+                                    </option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="inputState">Subcategory</label>
+                                <select id="inputState" class="form-control form-control-lg"
+                                    formControlName="subcategory">
+                                    <option selected>...</option>
+                                    <option *ngFor="let cat of subcategoryList">{{cat.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="inputState">Member</label>
+                                <select id="inputState" class="form-control form-control-lg" formControlName="member">
+                                    <option selected>...</option>
+                                    <option *ngFor="let mem of members">{{mem.name}}</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="inputState">Account</label>
+                                <select id="inputState" class="form-control form-control-lg" formControlName="account">
+                                    <option selected>...</option>
+                                    <option *ngFor="let acc of accounts">{{acc.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class=" card">
+                            <div class=" card-header">
+                                <h4 class=" card-title">Date Picker</h4>
+                            </div>
+                            <div class=" card-body">
+                                <div class=" form-group">
+                                    <input bsDatepicker class="form-control" data-datepicker-color="danger"
+                                        [bsConfig]="{ isAnimated: true, containerClass: 'theme-red' }" [bsValue]="date"
+                                        id="datepicker" type="text" formControlName="date_created" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container h-100 mt-1">
+                            <div class="row align-items-center h-100">
+                                <div class="col-6 mx-auto">
+                                    <label for="inputState"> </label>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <!-- <div class=" card-footer">
+                    <button class=" btn btn-fill btn-danger" type="submit">Save</button>
+                </div> -->
+            </div>
+        </div>
+
+
+
+        <div class=" col-md-4">
+            <div class=" card card-user">
+                <div class=" card-body">
+                    <p class=" card-text"></p>
+                    <div class=" author">
+                        <div class=" block block-one"></div>
+                        <div class=" block block-two"></div>
+                        <div class=" block block-three"></div>
+                        <div class=" block block-four"></div>
+
+                        <a href="javascript:void(0)">
+                            <!-- <img alt="..." class=" avatar" src="assets/img/emilyz.jpg" /> -->
+                            <i class="tim-icons icon-atom"></i>
+
+                            <h5 class=" title">Taylor's</h5>
+                        </a>
+                        <p class=" description">Finances</p>
+                    </div>
+                    <div class=" card-description">
+                        I will add account balances here....
+                    </div>
+                </div>
+                <div class=" card-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

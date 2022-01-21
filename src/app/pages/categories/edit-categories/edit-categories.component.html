@@ -1,0 +1,41 @@
+<div class="card" style="height: 405px">
+    <div class=" card-header">
+        <h5 class=" card-category">EDIT</h5>
+        <h3 class=" card-title">Categories</h3>
+    </div>
+
+    <div class=" card-body">
+        <tabset class="nav-pills-danger" type="pills">
+            <tab heading="Add">
+
+                <form [formGroup]="addCategoryForm" (ngSubmit)="addCategory()" class="form">
+                    <label> Enter a name for the new category </label>
+
+                    <div class=" form-group">
+                        <!-- <input class=" form-control" type="category" /> -->
+                        <input type="text" id="category" class="form-control form-control-lg"
+                            formControlName="category" />
+                    </div>
+
+                    <button class=" btn btn-fill btn-primary" type="submit">
+                        Add
+                    </button>
+                </form>
+            </tab>
+            <tab heading="Delete">
+                <form [formGroup]="deleteCategoryForm" (ngSubmit)="deleteCategory()" class="form">
+                    <label for="inputState">Select the Category you would like to delete</label>
+                    <select id="inputState" class="form-control form-control-lg" formControlName="category">
+                        <option>...</option>
+                        <option selected *ngFor="let cat of categories | async">{{cat.name}}
+                        </option>
+                    </select>
+
+                    <button class=" btn btn-fill btn-primary" type="submit">
+                        Delete
+                    </button>
+                </form>
+            </tab>
+        </tabset>
+    </div>
+</div>

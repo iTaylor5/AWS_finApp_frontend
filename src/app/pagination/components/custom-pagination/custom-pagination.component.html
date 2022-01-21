@@ -1,0 +1,58 @@
+<div *ngIf="page" class="card-actions align-items-center justify-content-end">
+    <span class="align-self-center mb-1 mx-1 text-muted">Elements per page:</span>
+    <div class="dropdown">
+        <button aria-expanded="false" aria-haspopup="true" class="btn btn-outline dropdown-toggle"
+            data-toggle="dropdown" type="button">
+            {{page.size}}
+        </button>
+        <div class="dropdown-menu dropdown-menu-right menu">
+            <a class="dropdown-item active" [routerLink]="" (click)="updatePageSize(5)">5</a>
+            <a class="dropdown-item" [routerLink]="" (click)="updatePageSize(20)">20</a>
+            <a class="dropdown-item" [routerLink]="" (click)="updatePageSize(100)">100</a>
+        </div>
+    </div>
+    <span class="align-self-center mb-1 mr-2 text-muted">
+        Shows {{page.numberOfElements}} of {{page.totalElements}}
+    </span>
+
+    <!-- <button class=" btn mr-1">
+        <i class=" tim-icons icon-minimal-left"> </i> Left
+      </button> -->
+
+    <a [routerLink]="" class="btn btn-primary mr-1" [ngClass]="{'disabled': page.first }" (click)="previousPage()">
+        <i class="tim-icons icon-minimal-left">Left</i>
+    </a>
+    <a [routerLink]="" class="btn btn-primary mr-1" [ngClass]="{'disabled': page.last }" (click)="nextPage()">
+        <i class="tim-icons icon-minimal-right">Right</i>
+    </a>
+</div>
+
+
+<!-- <div class=" row">
+    <div class=" col-md-6">
+        <div class=" card-header">
+            <h4 class=" card-title">Pagination</h4>
+        </div>
+        <div class="dropdown">
+            <button aria-expanded="false" aria-haspopup="true" class="btn btn-outline dropdown-toggle"
+                data-toggle="dropdown" type="button">
+                {{page.size}}
+            </button>
+            <div class="dropdown-menu dropdown-menu-right menu">
+                <a class="dropdown-item active" [routerLink]="" (click)="updatePageSize(5)">5</a>
+                <a class="dropdown-item" [routerLink]="" (click)="updatePageSize(20)">20</a>
+                <a class="dropdown-item" [routerLink]="" (click)="updatePageSize(100)">100</a>
+            </div>
+        </div>
+        <span class="align-self-center mb-1 mr-2 text-muted">
+            Shows {{page.numberOfElements}} of {{page.totalElements}}
+        </span>
+        <div class=" card-body">
+            <nav aria-label="Page navigation example">
+                <pagination class=" pagination-warning" [(ngModel)]="page">
+                </pagination>
+                <pagination [(ngModel)]="page.first"> </pagination>
+            </nav>
+        </div>
+    </div>
+</div> -->
