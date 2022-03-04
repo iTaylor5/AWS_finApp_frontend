@@ -49,3 +49,7 @@ http://localhost:8080/api/transactionCategories
 4) Ensure only unique names can be added to categories and subcategories.
 
 5) Fix bug on the categories component -> last element throw an error when you try delete.
+
+
+
+Just checking
